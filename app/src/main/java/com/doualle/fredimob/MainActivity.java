@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
             pdLoading.dismiss();
 
-            if(result.equalsIgnoreCase("true"))
+            if(result.substring(0,4).equalsIgnoreCase("true"))
             {
 
                 /* 0n lance une autre activité en cas d'identification réussie. Voir
@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
                  */
 
                 Intent intent = new Intent(MainActivity.this,FraisActivity.class);
+                intent.putExtra("json", result.substring(4));
                 startActivity(intent);
                 MainActivity.this.finish();
 

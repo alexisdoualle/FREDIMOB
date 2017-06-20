@@ -11,6 +11,19 @@
         android:layout_width="282dp"
         android:layout_height="90dp"
         android:text="Bienvenue"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="43dp" />
+        tools:layout_editor_absoluteX="51dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableFrais"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableFrais"
+        android:layout_width="326dp"
+        android:layout_height="297dp"
+        tools:layout_editor_absoluteX="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+
+    </TableLayout>
 </android.support.constraint.ConstraintLayout>
