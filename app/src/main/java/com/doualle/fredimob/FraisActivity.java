@@ -33,6 +33,10 @@ public class FraisActivity extends AppCompatActivity {
             JSONObject reader = new JSONObject(json);
             JSONArray fraisJSON = reader.getJSONArray("frais");
             String prenom = reader.getString("prenom");
+
+            TextView textView = (TextView) findViewById(R.id.textView);
+            textView.setText("Bienvenue, " + prenom);
+
             System.out.println(prenom);
 
             for (int i = 0; i < fraisJSON.length(); i++) {
@@ -53,7 +57,7 @@ public class FraisActivity extends AppCompatActivity {
             for(int i=0;i<listeFrais.size();i++)
             {
                 TableRow row=new TableRow(this);
-                row.setBackgroundColor(Color.GRAY);        // part1
+                row.setBackgroundColor(Color.WHITE);
                 row.setLayoutParams(new TableLayout.LayoutParams(
                         TableLayout.LayoutParams.MATCH_PARENT,
                         TableLayout.LayoutParams.WRAP_CONTENT));
@@ -61,12 +65,21 @@ public class FraisActivity extends AppCompatActivity {
 
                 TextView dateFrais =new TextView(this);
                 dateFrais.setPadding(5, 5, 5, 5);
-                dateFrais.setText(""+fr.get("date")+"; ");
+                dateFrais.setBackgroundResource(R.drawable.border);
+                dateFrais.setText(""+fr.get("date")+" ");
                 row.addView(dateFrais);
+
+                TextView trajetFrais =new TextView(this);
+                trajetFrais.setPadding(5, 5, 5, 5);
+                trajetFrais.setBackgroundResource(R.drawable.border);
+                trajetFrais.setText(""+fr.get("trajet"));
+                row.addView(trajetFrais);
+
 
                 TextView coutFrais =new TextView(this);
                 coutFrais.setPadding(5, 5, 5, 5);
-                coutFrais.setText(""+fr.get("cout") + "€");
+                coutFrais.setBackgroundResource(R.drawable.border);
+                coutFrais.setText(""+fr.get("cout") + " € ");
                 row.addView(coutFrais);
 
                 table.addView(row);
